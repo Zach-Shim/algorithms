@@ -18,11 +18,24 @@ Figure 1 (c) shows the sample output where the last line is produced by calling 
 ![alt text](https://github.com/Zach-Shim/algorithms/blob/master/DFS/sample_data.png)
 This program assumes the input data file has correctly formatted, valid data.
 
-# Input and Output
-Sample Input: 5 Aurora and 85th Green Lake Starbucks
-Sample Output: Woodland Park Zoo Troll under bridge PCC 1 5 1 3 1 2 2 4 3 4 3 2 5 4 5 2 0 0 Graph: Node 1 Aurora and 85th edge 1 2 edge 1 3 edge 1 5 Node 2 Green Lake Starbucks edge 2 4 Node 3 Woodland Park Zoo edge 3 2 edge 3 4 Node 4 Troll under bridge Node 5 PCC edge 5 2 edge 5 4
-
-Depth-first ordering: 1 2 4 3 5 (a) (b) (c) Figure 1. (a) Part of the data in the provided data32.txt; (b) a graph drawn based on data in (a); (c) output produced by calling displayGraph function followed by depthFirstSearch
-
-Supporting data types: An adjacency list (array of lists) will be used for graph implementation. In GraphNode, the field edgeHead points to the head of a list of EdgeNode (which stores edge info); visited is used to mark whether the node has been visited; data is a pointer to NodeData that has the information about this GraphNode. 
+# Supporting Data Types
+An adjacency list (array of lists) will be used for graph implementation. 
+In GraphNode, the field edgeHead points to the head of a list of EdgeNode (which stores edge info)
+visited is used to mark whether the node has been visited
+data is a pointer to NodeData that has the information about this GraphNode. 
 Here structs are used for GraphNode and EdgeNode for simplicity, you may use classes if desired.
+
+struct EdgeNode; // forward reference for the compiler
+struct GraphNode { // structs used for simplicity, use classes if desired
+  EdgeNode* edgeHead; // head of the list of edges 
+
+  NodeData* data;     // data information about each node 
+
+  bool visited;                 
+};
+
+struct EdgeNode {
+  int adjGraphNode;  // subscript of the adjacent graph node 
+
+  EdgeNode* nextEdge; 
+};
