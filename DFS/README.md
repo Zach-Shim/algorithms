@@ -1,16 +1,25 @@
 # DFS Algorithm
 Programming (depth-first search) This project is to display graph information and implement depth-first (search always starts at node #1).
 
-Input data (e.g., data32.txt): 
-The first line tells the number of nodes, say n, followed by a text description of each of the 1 through n nodes, one description per line (50 chars max length). 
-After that, each line consists of 2 integers (instead of 3 integers in Part 1) representing an edge. 
-If there is an edge from node 1 to node 2, the data is: 1 2. A zero for the first integer signifies the end of the data for that one graph. 
-In the file, all the edges for the 1st node will be listed first, then all the edges for the 2nd node, etc. They are taken as they come, no sorting. 
-There may be several graphs, each having at most 100 nodes. For example, Figure 1 (a) shows part of data from data32.txt (the data file you will be given) where it contains 5 nodes. For clarity, (b) shows a graph drawn based on data in (a). However, Figure 1 (b) is just for your reference. It’s not part of your input data or the output you need to produce. Figure 1 (c) shows the sample output where the last line is produced by calling depthFirstSearch function and the rest of them are produced by displayGraph. As you may see, edges in the input are always shown in reverse order in the output (see the NOTE in the Develop the class Section for more discussion). For this lab (including part 1) you may assume the input data file has correctly formatted, valid data.
+# Input data (e.g., data32.txt): 
+The first line tells the number of nodes, say n, followed by a text description of each of the 1 through n nodes, one description per line (50 chars max length).
 
-Sample Input: picture (not part of data): Sample Output 5
-Aurora and 85th Green Lake Starbucks
-Woodland Park Zoo Troll under bridge PCC 1 5 1 3 1 2 2 4 3 4 3 2 5 4 5 2 0 0 Graph: Node 1 Aurora and 85th edge 1 2 edge 1 3 edge 1 5 Node 2 Green Lake Starbucks edge 2 4 Node 3 Woodland Park Zoo edge 3 2 edge 3 4 Node 4 Troll under bridge Node 5 PCC edge 5 2 edge 5 4
+After that, each line consists of 2 integers (instead of 3 integers in Part 1) representing an edge. 
+
+If there is an edge from node 1 to node 2, the data is: 1 2. A zero for the first integer signifies the end of the data for that one graph. 
+
+In the file, all the edges for the 1st node will be listed first, then all the edges for the 2nd node, etc. They are taken as they come, no sorting. 
+
+There may be several graphs, each having at most 100 nodes. 
+For example, Figure 1 (a) shows part of data from data32.txt (the data file you will be given) where it contains 5 nodes. 
+For clarity, (b) shows a graph drawn based on data in (a). However, Figure 1 (b) is just for your reference. It’s not part of your input data or the output you need to produce. 
+Figure 1 (c) shows the sample output where the last line is produced by calling depthFirstSearch function and the rest of them are produced by displayGraph. As you may see, edges in the input are always shown in reverse order in the output.
+
+This program assumes the input data file has correctly formatted, valid data.
+
+# Input and Output
+Sample Input: 5 Aurora and 85th Green Lake Starbucks
+Sample Output: Woodland Park Zoo Troll under bridge PCC 1 5 1 3 1 2 2 4 3 4 3 2 5 4 5 2 0 0 Graph: Node 1 Aurora and 85th edge 1 2 edge 1 3 edge 1 5 Node 2 Green Lake Starbucks edge 2 4 Node 3 Woodland Park Zoo edge 3 2 edge 3 4 Node 4 Troll under bridge Node 5 PCC edge 5 2 edge 5 4
 
 Depth-first ordering: 1 2 4 3 5 (a) (b) (c) Figure 1. (a) Part of the data in the provided data32.txt; (b) a graph drawn based on data in (a); (c) output produced by calling displayGraph function followed by depthFirstSearch
 
